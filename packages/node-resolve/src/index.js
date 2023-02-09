@@ -298,7 +298,7 @@ export function nodeResolve(opts = {}) {
           });
           if (resolvedResolved) {
             // Handle plugins that manually make the result external
-            if (resolvedResolved.external) {
+            if (resolvedResolved.id === resolved.id && resolvedResolved.external) {
               return false;
             }
             // Allow other plugins to take over resolution. Rollup core will not
